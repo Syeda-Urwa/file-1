@@ -1,14 +1,179 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Maison Bags — Home</title>
+<style>
+  :root{
+    --bg:#FAF6F1;         /* cream */
+    --panel:#fff;
+    --muted:#8b7f78;      /* warm gray */
+    --accent:#b77b50;     /* coffee-brown */
+    --accent-2:#d9a67a;
+    --shadow: 0 8px 30px rgba(20,20,20,0.06);
+    --radius:12px;
+    --maxw:1200px;
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:#222;line-height:1.45}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:22px}
+  /* Header */
+  header{background:transparent;padding:18px 0;position:sticky;top:0;backdrop-filter: blur(6px);z-index:40}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .logo{
+    width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px;box-shadow:var(--shadow)
+  }
+  .brand-title{font-weight:700;font-size:18px}
+  nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600}
+  nav a:hover{color:#000}
+  .actions{display:flex;gap:12px;align-items:center}
+  .btn{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+  .ghost{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px 12px;border-radius:10px}
+  /* Hero */
+  .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;margin:28px 0}
+  .eyebrow{display:inline-block;background:#fff;padding:6px 10px;border-radius:999px;font-weight:700;color:var(--accent);box-shadow:0 6px 20px rgba(183,123,80,0.06)}
+  .hero h1{font-size:44px;margin:12px 0;color:#1f1b18}
+  .lead{color:var(--muted);max-width:62ch}
+  .hero-cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
+  .card-hero{background:var(--panel);border-radius:18px;padding:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center}
+  .card-hero img{width:320px;height:260px;border-radius:10px;object-fit:cover}
+  /* Featured grid */
+  .section{margin:28px 0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .product{
+    background:var(--panel);padding:14px;border-radius:12px;box-shadow:0 6px 18px rgba(20,20,20,0.04);transition:transform .18s,box-shadow .18s;
+  }
+  .product:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(20,20,20,0.08)}
+  .product img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+  .p-title{margin:10px 0 6px;font-weight:700}
+  .p-meta{display:flex;justify-content:space-between;align-items:center}
+  .price{color:var(--accent);font-weight:800}
+  /* Footer */
+  footer{margin-top:36px;padding:28px 0;background:transparent;color:var(--muted)}
+  .footer-grid{display:flex;gap:22px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+  /* Responsive */
+  @media (max-width:980px){
+    .hero{grid-template-columns:1fr; text-align:center}
+    .hero-cta{justify-content:center}
+    .card-hero img{width:280px;height:220px}
+    nav a{display:none}
+  }
+  @media (max-width:480px){
+    .logo{width:48px;height:48px;font-size:16px}
+    .hero h1{font-size:28px}
+  }
+</style>
 </head>
 <body>
-    <h1>this is my first html file</h1>
-    <h2>i am  adding second paragraph in it</h2>
-    
-    <h3>this is heading three</h3>
+  <div class="wrap">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="brand">
+            <div class="logo">US</div>
+            <div>
+              <div class="brand-title">Urwa's store</div>
+              <div style="font-size:12px;color:var(--muted)">Elegant • Sustainable • Crafted</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:14px">
+          <nav aria-label="Main navigation">
+            <a href="index.html">Home</a>
+            <a href="collection.html">Collection</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+
+          <div class="actions">
+            <a class="ghost" href="#">Login</a>
+            <a class="btn" href="collection.html">Shop</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">New Arrival</div>
+          <h1>Timeless Bags — Handcrafted with care</h1>
+          <p class="lead">Discover our cream & earth-tone collection made from responsibly sourced materials. Clean silhouettes, durable stitching, and thoughtful compartments for everyday elegance.</p>
+
+          <div class="hero-cta">
+            <a class="btn" href="collection.html">Explore Collection</a>
+            <a class="ghost" href="#about">Our Story</a>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card-hero">
+            <img src="https://images.unsplash.com/photo-1533777324565-a040eb52fac2?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Signature Bag">
+            <div style="margin-top:10px;font-weight:700;color:#3b2f2a">Signature Tote — Natural Leather</div>
+            <div style="font-size:13px;color:var(--muted);margin-top:6px">Limited edition • Hand-stitched</div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section">
+        <h3 style="margin-bottom:12px">Featured Picks</h3>
+        <div class="grid" id="featured">
+          <!-- 6 featured items (will be visible static) -->
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="">
+            <div class="p-title">Classic Leather Tote</div>
+            <div class="p-meta"><div style="color:var(--muted)">Tan • Medium</div><div class="price">PKR 6,500</div></div>
+          </article>
+
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="">
+            <div class="p-title">Everyday Backpack</div>
+            <div class="p-meta"><div style="color:var(--muted)">Olive • 20L</div><div class="price">PKR 4,200</div></div>
+          </article>
+
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1519741490598-6e6a6e2c4f1b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="">
+            <div class="p-title">Mini Crossbody</div>
+            <div class="p-meta"><div style="color:var(--muted)">Beige • Compact</div><div class="price">PKR 2,100</div></div>
+          </article>
+
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="">
+            <div class="p-title">Travel Duffel</div>
+            <div class="p-meta"><div style="color:var(--muted)">Brown • 45L</div><div class="price">PKR 7,200</div></div>
+          </article>
+
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1490367532201-b9bc1dc483f6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="">
+            <div class="p-title">Evening Clutch</div>
+            <div class="p-meta"><div style="color:var(--muted)">Cream • Small</div><div class="price">PKR 2,900</div></div>
+          </article>
+
+          <article class="product">
+            <img src="https://images.unsplash.com/photo-1520975915123-4b9b1a1d3f0f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="">
+            <div class="p-title">Office Laptop Bag</div>
+            <div class="p-meta"><div style="color:var(--muted)">Charcoal • 15\"</div><div class="price">PKR 5,500</div></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="section" style="margin-top:36px">
+        <div style="background:var(--panel);border-radius:12px;padding:18px;box-shadow:var(--shadow)">
+          <h3 style="margin-top:0">Our Story</h3>
+          <p style="color:var(--muted)">Urwa's store crafts timeless pieces with a focus on natural materials and careful construction. Each bag is designed to age beautifully and to be useful for many years. We prioritize sustainable suppliers and local artisans.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div style="color:var(--muted)">© 2025 Urwa'store</div>
+        <div style="color:var(--muted)">Terms • Privacy • Shipping</div>
+      </div>
+    </footer>
+  </div>
+
 </body>
 </html>
